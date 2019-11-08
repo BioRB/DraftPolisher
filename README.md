@@ -4,7 +4,7 @@
 
 ## Description
 
-DraftPolisher can produce an improved consensus sequence for a draft circular genome assembly . 
+DraftPolisher can produce an improved consensus sequence for a draft circular genome assembly. 
 
 ## Prerequisites
 
