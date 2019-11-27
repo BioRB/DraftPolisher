@@ -45,7 +45,7 @@ from shlex import split
 
 print("DRAFT_POLISHER v1.0.cov   by Rosario Nicola Brancaccio")
 print("Start")
-# open muscle allignment file
+# MUSCLE allignment
 parser = argparse.ArgumentParser(description='polish draft circular genomes')
 parser.add_argument("--input1", "-q", help="query sequence file", type=str)
 parser.add_argument("--input2", "-s", help="subject sequence file", type=str)
