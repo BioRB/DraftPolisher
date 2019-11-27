@@ -66,9 +66,9 @@ For an easier installation we suggest to use conda like this:
   * #### Mandatory
 | Name  | Example value | Description     |
 |-------|---------------|-----------------|
-| -q --input1| query.fa | query sequence in Fasta format |
-| -s --input2| subject.fa | subject sequence in Fasta format |
-| -f --input3| reference_contigs.fa | a Fasta file containing all the reads or sequences that you want to use for the polishing of the draft sequence|
+| -q --input1| query.fa | draft sequence in Fasta format |
+| -s --input2| subject.fa | reference genome in Fasta format |
+| -f --input3| reference_contigs.fa | a Fasta file containing all the reads or sequences to use as reference database for the polishing of the draft sequence|
 
   * #### Flags
 
