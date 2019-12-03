@@ -38,7 +38,7 @@ from itertools import islice
 import pandas as pd
 import numpy as np
 import argparse
-print("DRAFT_POLISHER v1.0 by Rosario Nicola Brancaccio")
+print("DraftPolisher_cir v1.0 by Rosario Nicola Brancaccio")
 print("Start")
 # MUSCLE alignment
 parser = argparse.ArgumentParser(description='polish draft circular genomes')
