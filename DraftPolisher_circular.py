@@ -2682,4 +2682,4 @@ elif answer == "no":
     print("all the process files will be discarded exept the consensus.fa file!")
     os.system("find . -type f -not -name 'consensus.fa' -delete")
 else:
-    print("Please enter yes or no.")
+    print("Please enter yes or no.")a
