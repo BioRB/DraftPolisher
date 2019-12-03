@@ -1,14 +1,14 @@
 # DraftPolisher
 
-**DraftPolisher** is a tool for fast polishing of draft circular genomes.
+**DraftPolisher** is a tool for fast polishing of draft sequences.
 
 ## Description
 
-DraftPolisher can produce an improved consensus sequence for a draft circular genome assembly. 
+DraftPolisher can produce an improved consensus sequence for a draft  linear or circular genome assembly. 
 
 ## Prerequisites
 
-DraftPolisher is designed for the polishing of draft circular sequences. The number of nucleotide gaps may not exceed 26 bp in a window of 34 bp before or after any mismatch. The presence of large gaps will cause an error and block in the process. In this case, we suggest to perform a preliminary alignment and remove the bigger gaps before to precess it with this tool. The tool will only evaluate the mismatches and gaps present and will not affect the portion of the sequence where no mismatches or gaps have been identified. DraftPolisher_cov.py is an alternative release that takes into account also the coverage of the contigs produced in the upstream assembling step that you have presumably carried out before. DraftPolisher_cov.py was designed based on the SPAdes assembling output file format, where the coverage value is reported in the last part of the sequences IDs, so if you have in mind to use this version of the tool be careful about the formatting of your assembling output file (see SPAdes output format for more details). A general prerequisite for both the versions of the tool is the formatting of query and subject fasta files. It is mandatory to put "QRY" as query ID for the draft sequence and "SBJ" as subject ID for the reference genome. In the folder "Test" you can find data to test the tool.
+DraftPolisher is designed for the polishing of draft sequences. The number of nucleotide gaps may not exceed 26 bp in a window of 34 bp before or after any mismatch. The presence of large gaps will cause an error and block in the process. In this case, we suggest to perform a preliminary alignment and remove the bigger gaps before to precess it with this tool. The tool will only evaluate the mismatches and gaps present and will not affect the portion of the sequence where no mismatches or gaps have been identified. Two different releases of the tool are present: DraftPolisher_lin v1.0 for the polishing of linear sequences and DraftPolisher_cir v1.0 for the polishing of circular sequences. Two additional releases have been generated, to take into account the coverage of the reference sequences, used for the polishing of the draft sequence: DraftPolisher_lin_cov v1.0 and DraftPolisher_cir_cov v1.0 suitable for linear and circular sequences respectivelly. The "cov" releases were designed based on the SPAdes assembling output file format, where the coverage value is reported in the last part of the sequences IDs, so to use this version of the tool take care of the reference sequences file format (see SPAdes output format for more details). A general prerequisite for all the versions of the tool is the formatting of query and subject fasta files. It is mandatory to put "QRY" as query ID for the draft sequence and "SBJ" as subject ID for the reference genome. In the folder "Test" we loaded some data to test the tool.
 
 ## Installation
 This tool uses MUSCLE Sequence alignment tool to perform the alignment thus the installation is required (We used MUSCLE v3.8.1551 to test the tool).
@@ -81,7 +81,19 @@ Flags are special parameters without value.
 ## Usage 
 
 ```
-python DraftPolisher.py -q query.fa -s subject.fa -f reads.fa
+python DraftPolisher_linear.py -q query.fa -s subject.fa -f reads.fa
+```
+
+```
+python DraftPolisher_circular.py -q query.fa -s subject.fa -f reads.fa
+```
+
+```
+python DraftPolisher_linear_cov.py -q query.fa -s subject.fa -f reads.fa
+```
+
+```
+python DraftPolisher_circular_cov.py -q query.fa -s subject.fa -f reads.fa
 ```
 
 ## Main Output
