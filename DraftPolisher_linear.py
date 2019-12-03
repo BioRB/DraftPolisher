@@ -38,7 +38,7 @@ import pandas as pd
 import numpy as np
 import argparse
 
-print("DRAFT_POLISHER v1.0 by Rosario Nicola Brancaccio")
+print("DraftPolisher_lin v1.0 by Rosario Nicola Brancaccio")
 print("Start")
 # run muscle
 parser = argparse.ArgumentParser(description='polish draft circular genomes')
