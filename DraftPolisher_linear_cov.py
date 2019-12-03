@@ -4460,7 +4460,7 @@ os.system("sed -e 's/_//g' last_consensus.txt > consensus.fa")
 print("Finish")
 print("the polished sequence is in the file: consensus.fa")
 answer = input(
-    "Do you want to keep process files (default=False)? If yes, all the files inside the working dir will be destroied exept the output file [yes/no]: ")
+    "Do you want to keep process files (default=False)? If no, all the files inside the working dir will be destroied exept the output file [yes/no]: ")
 if answer == "yes":
     print("all the process files will be kept!")
 elif answer == "no":
