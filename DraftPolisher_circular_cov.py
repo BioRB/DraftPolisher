@@ -43,7 +43,7 @@ import numpy as np
 import argparse
 from shlex import split
 
-print("DRAFT_POLISHER v1.0.cov   by Rosario Nicola Brancaccio")
+print("DraftPolisher_cir_cov v1.0   by Rosario Nicola Brancaccio")
 print("Start")
 # MUSCLE alignment
 parser = argparse.ArgumentParser(description='polish draft circular genomes')
