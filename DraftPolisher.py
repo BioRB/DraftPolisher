@@ -34,7 +34,7 @@ import argparse
 from Bio.Seq import Seq
 
 
-print("DRAFT_POLISHER v1.0 cov by Rosario Nicola Brancaccio")
+print("DraftPolisher v1.0 by Rosario Nicola Brancaccio")
 print("Start")
 
 
