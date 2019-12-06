@@ -81,20 +81,13 @@ Flags are special parameters without value.
 ## Usage 
 
 ```
-python DraftPolisher_linear.py -q query.fa -s subject.fa -f reads.fa
+python DraftPolisher.py -q query.fa -s subject.fa -f reads.fa
 ```
 
 ```
-python DraftPolisher_circular.py -q query.fa -s subject.fa -f reads.fa
+python DraftPolisher_cov.py -q query.fa -s subject.fa -f reads.fa
 ```
 
-```
-python DraftPolisher_linear_cov.py -q query.fa -s subject.fa -f reads.fa
-```
-
-```
-python DraftPolisher_circular_cov.py -q query.fa -s subject.fa -f reads.fa
-```
 
 ## Main Output
 
