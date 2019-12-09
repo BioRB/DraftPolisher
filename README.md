@@ -4,7 +4,7 @@
 
 ## Description
 
-DraftPolisher can produce an improved consensus sequence for a draft genome assembly (or any draft sequence assembly) by using a reference genome and a reference database of sequences (by which the frequences of 17 bp k-mers, representative of each mismatch, will be evaluated) both in FASTA format. 
+DraftPolisher can produce an improved consensus sequence for a draft genome assembly (or any draft sequence assembly) by using a reference genome and a reference database of sequences (by which the frequences of a defined k-mer, representative of each mismatch, will be evaluated) both in FASTA format. 
 
 ## Prerequisites
 
