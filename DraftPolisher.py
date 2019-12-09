@@ -21,7 +21,7 @@
 # reference sequence
 # # the length of the sequences IDs in input.fa, has to be exactly 3 characters
 # use the tool as follows:
-# python DraftPolisher.py -q query.fa -s subject.fa -f sequences.fa
+# python DraftPolisher_cov.py -q query.fa -s subject.fa -f sequences.fa
 
 import os
 import re
@@ -34,7 +34,7 @@ import argparse
 from Bio.Seq import Seq
 
 
-print("DraftPolisher v1.0 by Rosario Nicola Brancaccio")
+print("DraftPolisher_cov v1.0 cov by Rosario Nicola Brancaccio")
 print("Start")
 
 
@@ -148,20 +148,9 @@ os.system("paste -d '|' oligo.txt oligorv2.txt > oligos_fw_rv.txt")
 olix = open("oligos_fw_rv.txt")
 oliy = olix.readlines()
 linelist = [line.rstrip('\n') for line in open("oligos_fw_rv.txt")]
-# spades = args.input3
-spades = [line.rstrip('\n') for line in open(args.input3)]
+spades = args.input3
 for line in linelist:
-    fieldsa = line.split('|')
-    sum = 0
-    fields = None
-    for linew in spades:
-        if linew[0] == '>':
-            fields = linew.split('_')
-        if (fieldsa[0] in linew) or (fieldsa[1] in linew) and fields:
-            sum += float(fields[-1])  # or float
-    print(sum, file=open("frequencies_query.txt", "a+"))
-
-# os.system("grep -E '{0}' {1} | wc -l >> frequencies_query.txt".format(line, spades))
+    os.system("grep -E '{0}' {1} | wc -l >> frequencies_query.txt".format(line, spades))
 # subject sequence processing(subject)
 with open('ff.txt') as pr:
     lines = pr.readlines()
@@ -183,19 +172,9 @@ os.system("paste -d '|' oligob.txt oligorv2b.txt > oligos_fw_rvb.txt")
 olix = open("oligos_fw_rvb.txt")
 oliy = olix.readlines()
 linelist = [line.rstrip('\n') for line in open("oligos_fw_rvb.txt")]
-# spades = args.input3
-spades = [line.rstrip('\n') for line in open(args.input3)]
+spades = args.input3
 for line in linelist:
-    fieldsa = line.split('|')
-    sum = 0
-    fields = None
-    for linew in spades:
-        if linew[0] == '>':
-            fields = linew.split('_')
-        if (fieldsa[0] in linew) or (fieldsa[1] in linew) and fields:
-            sum += float(fields[-1])  # or float
-    print(sum, file=open("frequencies_subject.txt", "a+"))
-#    os.system("grep -E '{0}' {1} | wc -l >> frequencies_subject.txt".format(line, spades))
+    os.system("grep -E '{0}' {1} | wc -l >> frequencies_subject.txt".format(line, spades))
 # combine frequencies in 1 file and produce 1 column of the consensus
 data1 = pd.read_csv('frequencies_query.txt', names=["Sequence"])
 data2 = pd.read_csv('frequencies_subject.txt', names=["Sequence"])
