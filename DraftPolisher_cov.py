@@ -75,6 +75,7 @@ parser = argparse.ArgumentParser(description='polish draft circular genomes')
 parser.add_argument("--input1", "-q", help="query sequence file", type=str)
 parser.add_argument("--input2", "-s", help="subject sequence file", type=str)
 parser.add_argument("--input3", "-f", help="SPAdes contigs file (or any sequences file in FASTA format)", type=str)
+parser.add_argument("--input4", "-k", help="k-mer size", type=int)
 args = parser.parse_args()
 os.system("cat {0} {1} > inseq.fa".format(args.input1, args.input2))
 myfile = open('inseq1.fa', 'w')
@@ -135,7 +136,7 @@ with open('ff.txt') as pr:
     ja = lines[0].rstrip("\n\r")
     ln = len(hh)
     for i in pos:
-        print(get_slice(ja, i, 8, '_'), file=open("oligo.txt", "a+"))
+        print(get_slice(ja, i, args.input4, '_'), file=open("oligo.txt", "a+"))
 # generate the reverse and complement of the oligos and save fw and rv in the same file
 
 with open('oligo.txt') as dew:
@@ -171,7 +172,7 @@ with open('ff.txt') as pr:
     ja = lines[2].rstrip("\n\r")
 # processing of line 2 that correspond to the subject sequence
     for i in pos:
-        print(get_slice(ja, i, 8, '_'), file=open("oligob.txt", "a+"))
+        print(get_slice(ja, i, args.input4, '_'), file=open("oligob.txt", "a+"))
 # generate the reverse and complement of the oligos and save fw and rv in the same file
 with open('oligob.txt') as dew:
     kas = dew.readlines()
