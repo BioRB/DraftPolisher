@@ -77,7 +77,14 @@ parser.add_argument("--input2", "-s", help="subject sequence file", type=str)
 parser.add_argument("--input3", "-f", help="SPAdes contigs file (or any sequences file in FASTA format)", type=str)
 args = parser.parse_args()
 os.system("cat {0} {1} > inseq.fa".format(args.input1, args.input2))
-os.system("muscle -in inseq.fa -clw > muscle_out.fa")
+myfile = open('inseq1.fa', 'w')
+with open("inseq.fa") as inseq:
+    lines = inseq.readlines()
+    lines[0] = ">QRY\n"
+    lines[2] = ">SBY\n"
+    myfile.writelines(lines)
+    myfile.close()
+os.system("muscle -in inseq1.fa -clw > muscle_out.fa")
 os.system("sed -e '1,3d' < muscle_out.fa > m1.txt")
 with open("m1.txt") as f:
     for line in islice(f, 0, None, 4):
