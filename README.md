@@ -8,7 +8,7 @@ DraftPolisher can produce an improved consensus sequence for a draft genome asse
 
 ## Prerequisites
 
-DraftPolisher is designed for the polishing of draft sequences. Two different releases of the tool are present: DraftPolisher.py and DraftPolisher_cov.py. The "cov" release (i.e. coverage release)  takes into account also the coverage of the sequences from the reference database used for the polishing. The "cov" release was designed based on the SPAdes assembling output file format, where the coverage value is reported in the last part of the sequences IDs, so if using this version of the tool take care of the reference sequences file format (see SPAdes output format for more details). In "Test" folder data for testing the tool are available.
+DraftPolisher is designed for the polishing of draft sequences. Two different releases of the tool are present: DraftPolisher.py and DraftPolisher_cov.py. The "cov" release (i.e. coverage release)  takes into account also the coverage of the sequences from the reference database used for the polishing. The "cov" release was designed based on the SPAdes assembling output file format, where the coverage value is reported in the last part of the sequences IDs, so if using this version of the tool take care of the reference sequences file format (see SPAdes output format for more details).Three files are required by the tool: the query sequence to polish, a reference sequence, a reference database of sequences and the size of the k-mer to use to perform the polishing (we suggest k-mer size = 8). In "Test" folder data for testing the tool are available.
 
 ## Installation
 This tool uses MUSCLE Sequence alignment tool to perform the alignment thus the installation is required (We used MUSCLE v3.8.1551 to test the tool).
@@ -81,11 +81,11 @@ Flags are special parameters without value.
 ## Usage 
 
 ```
-python DraftPolisher.py -q query.fa -s subject.fa -f reads.fa
+python DraftPolisher.py -q query.fa -s subject.fa -f reads.fa -k 8
 ```
 
 ```
-python DraftPolisher_cov.py -q query.fa -s subject.fa -f reads.fa
+python DraftPolisher_cov.py -q query.fa -s subject.fa -f reads.fa -k 8
 ```
 
 
