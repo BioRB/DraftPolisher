@@ -73,7 +73,7 @@ def get_slice(s, idx, n=8, ignored_chars='_'):
 parser = argparse.ArgumentParser(description='polish draft genomes')
 parser.add_argument("--query", "-q", help="query sequence", type=str)
 parser.add_argument("--subject", "-s", help="subject sequence", type=str)
-parser.add_argument("--sequences_database", "-f", help="sequencese database (any sequences file in FASTA format)", type=str)
+parser.add_argument("--sequences_database", "-f", help="sequences database (any sequences file in FASTA format)", type=str)
 parser.add_argument("--kmer_size", "-k", help="k-mer size", type=int)
 args = parser.parse_args()
 os.system("cat {0} {1} > inseq.fa".format(args.input1, args.input2))
