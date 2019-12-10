@@ -35,7 +35,6 @@ from Bio.Seq import Seq
 
 
 print("DraftPolisher v1.0 by Rosario Nicola Brancaccio")
-print("Start")
 
 
 # function for fragments generation
