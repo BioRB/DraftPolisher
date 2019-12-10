@@ -71,11 +71,11 @@ def get_slice(s, idx, n=8, ignored_chars='_'):
 
 
 # run muscle
-parser = argparse.ArgumentParser(description='polish draft circular genomes')
-parser.add_argument("--input1", "-q", help="query sequence file", type=str)
-parser.add_argument("--input2", "-s", help="subject sequence file", type=str)
-parser.add_argument("--input3", "-f", help="SPAdes contigs file (or any sequences file in FASTA format)", type=str)
-parser.add_argument("--input4", "-k", help="k-mer size", type=int)
+parser = argparse.ArgumentParser(description='polish draft genomes')
+parser.add_argument("--query", "-q", help="query sequence", type=str)
+parser.add_argument("--subject", "-s", help="reference sequence", type=str)
+parser.add_argument("--sequences_database", "-f", help="sequencese database (any sequences file in FASTA format)", type=str)
+parser.add_argument("--kmer_size", "-k", help="k-mer size", type=int)
 args = parser.parse_args()
 os.system("cat {0} {1} > inseq.fa".format(args.input1, args.input2))
 myfile = open('inseq1.fa', 'w')
