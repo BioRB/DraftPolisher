@@ -33,8 +33,12 @@ import numpy as np
 import argparse
 from Bio.Seq import Seq
 
+class bcolors:
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
 
-print("DraftPolisher v1.0 by Rosario Nicola Brancaccio")
+
+print(bcolors.BOLD + "\n\n DraftPolisher_cov v1.0 by Rosario Nicola Brancaccio\n\n" + bcolors.ENDC)
 
 
 # function for fragments generation
