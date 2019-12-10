@@ -34,7 +34,12 @@ import argparse
 from Bio.Seq import Seq
 
 
-print("DraftPolisher_cov v1.0 cov by Rosario Nicola Brancaccio")
+class bcolors:
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+
+print(bcolors.BOLD + "\n\n DraftPolisher v1.0 by Rosario Nicola Brancaccio\n\n" + bcolors.ENDC)
 
 
 # function for fragments generation
