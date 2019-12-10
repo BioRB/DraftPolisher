@@ -57,7 +57,7 @@ For an easier installation we suggest to use conda like this:
 
 ```conda install -c conda-forge biopython```
 
-```conda install -c anaconda argparse```
+```conda install -c anaconda argparse python=3.6```
 
 
 
