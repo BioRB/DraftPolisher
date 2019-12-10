@@ -64,7 +64,7 @@ For an easier installation we suggest to use conda like this:
 ## Parameters
 
   * #### Mandatory
-| Flag Name  | Example value | Description     |
+| Name  | Example value | Description     |
 |------------|---------------|-----------------|
 | -q <br> --input1| query.fa | draft sequence in Fasta format |
 | -s <br> --input2| subject.fa | reference genome in Fasta format |
