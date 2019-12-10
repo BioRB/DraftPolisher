@@ -20,7 +20,7 @@ conda install muscle
 Or you can download it from this site and install it manually: http://drive5.com/muscle/downloads.htm
 
 No other installation steps are required. You need just to run the python script of the program. 
-The tool works well with Python 3.6.0 (https://www.python.org/downloads/release/python-360/) but older Python3 versions should work.
+The tool works well with Python 3.6.0 (https://www.python.org/downloads/release/python-360/) but others Python3 versions should work.
 
 The following python packages are required:
 - os
