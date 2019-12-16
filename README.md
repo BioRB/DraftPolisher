@@ -109,7 +109,7 @@ Several files are generated during the process and they can be used to evaluate 
   
 ## Versioning
 
-Versions: 1.0, 1.0.cov
+Versions: 1.0
 
 
 ## Authors
