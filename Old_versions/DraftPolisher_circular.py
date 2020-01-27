@@ -16,7 +16,7 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>
 #
 # first you need to add execute permissions to the tool file as follows:
-# chmod u+x DraftPolisher.py
+# chmod u+x DraftPolisher_cov.py
 # # input files format:
 # >QRY
 # draft sequence
@@ -24,7 +24,7 @@
 # reference sequence
 # # the length of the sequences IDs in input.fa, has to be exactly 3 characters
 # use the tool as follows:
-# python DraftPolisher.py -q query.fa -s subject.fa -f sequences.fa
+# python DraftPolisher_cov.py -q query.fa -s subject.fa -f sequences.fa
 # max gap allowed per each position, between draft and reference sequences is:
 # 26(*2)bp in a max fragment length of 34(*2)bp
 # meaning that, considering a "i" base position (in the draft or reference sequence):
