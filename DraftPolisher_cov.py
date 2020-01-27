@@ -80,7 +80,7 @@ parser.add_argument("--subject", "-s", help="reference sequence", type=str)
 parser.add_argument("--sequences_database", "-f", help="sequences database (any sequences file in FASTA format)", type=str)
 parser.add_argument("--kmer_size", "-k", help="k-mer size", type=int)
 args = parser.parse_args()
-os.system("cat {0} {1} > inseq.fa".format(args.input1, args.input2))
+os.system("cat {0} {1} > inseq.fa".format(args.query, args.subject))
 myfile = open('inseq1.fa', 'w')
 with open("inseq.fa") as inseq:
     lines = inseq.readlines()
@@ -139,7 +139,7 @@ with open('ff.txt') as pr:
     ja = lines[0].rstrip("\n\r")
     ln = len(hh)
     for i in pos:
-        print(get_slice(ja, i, args.input4, '_'), file=open("oligo.txt", "a+"))
+        print(get_slice(ja, i, args.kmer_size, '_'), file=open("oligo.txt", "a+"))
 # generate the reverse and complement of the oligos and save fw and rv in the same file
 
 with open('oligo.txt') as dew:
@@ -152,8 +152,8 @@ os.system("paste -d '|' oligo.txt oligorv2.txt > oligos_fw_rv.txt")
 olix = open("oligos_fw_rv.txt")
 oliy = olix.readlines()
 linelist = [line.rstrip('\n') for line in open("oligos_fw_rv.txt")]
-# spades = args.input3
-spades = [line.rstrip('\n') for line in open(args.input3)]
+# spades = args.sequences_database
+spades = [line.rstrip('\n') for line in open(args.sequences_database)]
 for line in linelist:
     fieldsa = line.split('|')
     sum = 0
@@ -175,7 +175,7 @@ with open('ff.txt') as pr:
     ja = lines[2].rstrip("\n\r")
 # processing of line 2 that correspond to the subject sequence
     for i in pos:
-        print(get_slice(ja, i, args.input4, '_'), file=open("oligob.txt", "a+"))
+        print(get_slice(ja, i, args.kmer_size, '_'), file=open("oligob.txt", "a+"))
 # generate the reverse and complement of the oligos and save fw and rv in the same file
 with open('oligob.txt') as dew:
     kas = dew.readlines()
@@ -187,8 +187,8 @@ os.system("paste -d '|' oligob.txt oligorv2b.txt > oligos_fw_rvb.txt")
 olix = open("oligos_fw_rvb.txt")
 oliy = olix.readlines()
 linelist = [line.rstrip('\n') for line in open("oligos_fw_rvb.txt")]
-# spades = args.input3
-spades = [line.rstrip('\n') for line in open(args.input3)]
+# spades = args.sequences_database
+spades = [line.rstrip('\n') for line in open(args.sequences_database)]
 for line in linelist:
     fieldsa = line.split('|')
     sum = 0
